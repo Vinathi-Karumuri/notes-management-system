@@ -1,0 +1,230 @@
+/* =========================
+   GLOBAL BACKGROUND IMAGE
+========================= */
+body {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("/static/images/bg-notes.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* =========================
+   COMMON CARD BASE
+========================= */
+.card,
+.about-card,
+.contact-card {
+  background: rgba(229, 231, 211, 0.96);
+  color: #000;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   ABOUT PAGE FIX
+========================= */
+.about-container {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card {
+  max-width: 700px;
+  width: 100%;
+  padding: 30px 35px;
+}
+
+/* =========================
+   CONTACT PAGE FIX
+========================= */
+.contact-container {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card {
+  max-width: 420px;
+  width: 100%;
+  padding: 28px;
+}
+
+/* =========================
+   TEXT INSIDE CARDS ONLY
+========================= */
+.card h1,
+.card h2,
+.card h3,
+.card p,
+.about-card h2,
+.about-card p,
+.contact-card h2,
+.contact-card label {
+  color: #000;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+textarea {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ced4da;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("/static/images/bg-notes.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.dark-mode .card,
+body.dark-mode .about-card,
+body.dark-mode .contact-card {
+  background: rgba(33,37,41,0.96);
+  color: #f8f9fa;
+}
+
+body.dark-mode .card h1,
+body.dark-mode .card h2,
+body.dark-mode .card h3,
+body.dark-mode .card p,
+body.dark-mode label {
+  color: #fff;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #1e1e1e;
+  color: #fff;
+  border: 1px solid #495057;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  font-size: 0.9rem;
+}
+
+footer strong {
+  color: #ffc107;
+}
+
+/* =========================
+   CONTACT FORM FIX
+========================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 120px;
+}
+
+/* Your Notes heading fix */
+.your-notes-title,
+h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Search input visibility */
+input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+body.dark-mode input::placeholder {
+  color: #adb5bd;
+}
+
+input {
+  color: #000;
+}
+
+body.dark-mode input {
+  color: #fff;
+}
+
+/* Date & muted text fix */
+.text-muted {
+  color: #6c757d !important;
+}
+
+body.dark-mode .text-muted {
+  color: #adb5bd !important;
+}
+
+/* =========================
+   YOUR NOTES HEADING FIX
+========================= */
+
+h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Dark mode lo kuda same */
+body.dark-mode h3 {
+  color: #ffffff !important;
+}
+
+/* =========================
+   CONTACT PAGE – DARK MODE FIX
+========================= */
+
+body.dark-mode .contact-card {
+  background: rgba(33, 37, 41, 0.97);
+  color: #ffffff;
+}
+
+/* Contact heading */
+body.dark-mode .contact-card h2 {
+  color: #ffffff;
+}
+
+/* Contact inputs */
+body.dark-mode .contact-card input,
+body.dark-mode .contact-card textarea {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #495057;
+}
+
+/* Placeholder text */
+body.dark-mode .contact-card input::placeholder,
+body.dark-mode .contact-card textarea::placeholder {
+  color: #adb5bd;
+}
+
+/* Send button */
+body.dark-mode .contact-card button {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+}
+
+body.dark-mode .contact-card button:hover {
+  background-color: #084cdf;
+}
