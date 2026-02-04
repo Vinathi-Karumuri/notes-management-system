@@ -195,21 +195,21 @@ def reset_password(token):
     conn = get_db_connection()
     cur = conn.cursor()
 
-    # 1️⃣ Get user by token (SQLite safe)
+    # Get user by token (SQLite safe)
     cur.execute(
         "SELECT id, token_expiry FROM users WHERE reset_token=?",
         (token,)
     )
     user = cur.fetchone()
 
-    # 2️⃣ Token valid aa kaadha check
+    # checking token valid or not 
     if not user:
         cur.close()
         conn.close()
         flash("Invalid or expired link.", "danger")
         return redirect('/login')
 
-    # 3️⃣ Expiry check in PYTHON (NOT SQL)
+    # Expiry check in PYTHON (NOT SQL)
     from datetime import datetime
 
     token_expiry = datetime.fromisoformat(user["token_expiry"])
@@ -219,7 +219,7 @@ def reset_password(token):
         flash("Reset link expired.", "danger")
         return redirect('/login')
 
-    # 4️⃣ If password submitted
+    # If password submitted
     if request.method == 'POST':
         new_password = request.form['password']
         hashed_pw = generate_password_hash(new_password)
