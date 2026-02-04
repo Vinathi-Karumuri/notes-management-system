@@ -12,14 +12,17 @@ from email.mime.multipart import MIMEMultipart
 import random
 import string
 import sqlite3
+import os
 
 # -------- App Initialization --------
 app = Flask(__name__)
 app.secret_key = "myverysecretkey"  # change this in production
 
 # ------- Database Connection Helper ---------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "notes.db")
 def get_db_connection():
-    conn = sqlite3.connect("notes.db")
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn    
 

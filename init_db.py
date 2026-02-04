@@ -1,8 +1,13 @@
 import sqlite3
+import os
 
-conn = sqlite3.connect("notes.db")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "notes.db")
+SCHEMA_PATH = os.path.join(BASE_DIR, "schema.sql")
 
-with open("schema.sql") as f:
+conn = sqlite3.connect(DB_PATH)
+
+with open(SCHEMA_PATH, "r") as f:
     conn.executescript(f.read())
 
 conn.commit()
