@@ -181,7 +181,7 @@ def forgot_password():
         cur.close()
         conn.close()
 
-        reset_link = f"https://vinathi.pythonanywhere.com/reset-password/{token}"
+        reset_link = url_for('reset_password', token=token, _external=True)
         send_reset_email(email, reset_link) # (email integration later)
 
         flash("Password reset link sent to your email.", "success")
